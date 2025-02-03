@@ -26,9 +26,9 @@ const Title = styled.div`
   }
 `;
 
-const AddWorkout = () => {
+const AddWorkout = ({ workout, setWorkout, addNewWorkout, buttonLoading }) => {
 
-  const [workout, setWorkout] = useState("");
+  
 
   return (
     <Card>
@@ -51,7 +51,9 @@ const AddWorkout = () => {
       <Button
         text="Add Workout"
         small
-        
+        onClick={() => addNewWorkout()}
+        isLoading={buttonLoading}
+        isDisabled={buttonLoading}
         
       />
     </Card>
